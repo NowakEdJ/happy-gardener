@@ -30,7 +30,12 @@
 
 /*Need to modify for top space*/
 
-.notification {
+.notification2 {
     background-color: #178776;
+	background-image: url(/assets/Images/gardening2.jpg);
     color: #fff;
+	background-position: center;
+	background-size: cover;
+	height: 600px;
+	font-size: 100px;
 }
