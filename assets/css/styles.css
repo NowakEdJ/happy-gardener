@@ -1,6 +1,36 @@
+:root {
+    --dark: rgb(53, 134, 62);
+    --light: white;
+    --border-radius: .3rem;
+  }
+
 * {
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
 }
+.navbar{
+	background-color:var(--dark);
+	height: 100px;
+}
 
+.navbar-item, .navbar-link{
+	color: var(--light);
+	font-weight: 600;
+	font-size: 20px;
+}
+
+.navbar-link{
+	padding-right: 50px;
+}
+
+.navbar-dropdown .navbar-item{
+	color: var(--dark);
+}
+
+/*Need to modify for top space*/
+
+.notification {
+    background-color: #178776;
+    color: #fff;
+}
