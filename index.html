@@ -82,25 +82,35 @@
         </div>
       </section>
 
-     
-      <!--Saved Plants container to break up from above section-->
-      <section>
-        <div class="container is-fullhd">
-          <div class="notification is-primary">
-            My Saved Plants
-          </div>
-        </div>
-      </section>
+			<!--Testing placeholder to make sure Zone ID call works.  TODO: Remove before go-live!-->
+			<!--Set Location-->
+			<section>
+				<div>
+					<button onclick = "bulmaFake()" > Set Location </button>
+					<p id="zip-code">zipCode</p>
+					<p id="zone-id">zoneId</p>
+				</div>
+			</section>
 
-      <!--Plant Cards-->
-      <div class="cards">
-				<ul class="card">
-				</ul>
-			</div>
-    
-      </div>
-    </main>
+			<!--Testing placeholder to make sure Plants API call works.  TODO: Remove before go-live!-->
+			<!--Plant Cards-->
+			<section>
+				<div class="cards">
+					<button onclick = "apiGetPlants()" > Get Plants </button>
+					<div id="plant-container"></div>
+				</div>
+			</section>
 
+			<!--Saved Plants container to break up from above section-->
+			<section>
+				<div class="container is-fullhd">
+					<div class="notification is-primary">
+						<div class="plant">My Saved Plant</div>
+					</div>
+				</div>
+			</section>
+	
+		</main>
     <footer>
     </footer>
 		<script src="./assets/js/script.js"></script>

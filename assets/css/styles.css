@@ -31,9 +31,9 @@
 /*Need to modify for top space*/
 
 .notification2 {
-    background-color: #178776;
-	background-image: url(/assets/Images/gardening2.jpg);
-    color: #fff;
+  background-color: #178776;
+	background-image: url(../images/woman-gardening.jpg);
+  color: #fff;
 	background-position: center;
 	background-size: cover;
 	height: 600px;
