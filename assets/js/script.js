@@ -1,6 +1,6 @@
 const zipCodeEl = document.getElementById('zip-code');
 const zoneIdEl = document.getElementById('zone-id');
-const cardContainerEl = document.getElementById('card-container');
+const cardsContainerEl = document.getElementById('#cardsSection .columns');
 
 //TODO: Remove defaults before go-live
 var zipCode = '80525';
@@ -53,7 +53,13 @@ function apiGetPlants() {
 		return response.json();
 	})
 	.then(function (data) {
+		const cardsContainerEl = document.querySelector('#cardsSection .columns');
+		cardsContainerEl.innerHTML='';
 		for (let i = 0; i < data.data.length; i++) {
+			//Creating columns so the cards dont stack
+			let columnDiv = document.createElement('div');
+			columnDiv.className = 'column is-one-fifth';
+
 			// Main 'card' div
 			let cardDiv = document.createElement('div');
 			cardDiv.className = 'card';
@@ -117,8 +123,11 @@ function apiGetPlants() {
 			cardDiv.appendChild(plantImageDiv);
 			cardDiv.appendChild(cardContentDiv);
 
+			//Put cards in columns instead of stacking
+			columnDiv.appendChild(cardDiv);
+
 			// Append main card div to card-container
-			cardContainerEl.appendChild(cardDiv);
+			cardsContainerEl.appendChild(columnDiv);
 		}
 });
 }
@@ -146,3 +155,35 @@ function removeLetters(zone) {
 }
 
 initializePage();
+
+//Modal for Zone Map in Navbar
+document.addEventListener('DOMContentLoaded', () => {
+    // Get the modal and the button that opens the modal
+    const modal = document.getElementById('modal-hardiness-zone');
+    const btnOpenModal = document.getElementById('open-modal-hardiness-zone');
+    // Open the modal when the button is clicked
+    btnOpenModal.addEventListener('click', function() {
+        modal.classList.add('is-active');
+    });
+    // Close the modal when the close button is clicked or when the background is clicked
+    modal.querySelector('.modal-close').addEventListener('click', function() {
+        modal.classList.remove('is-active');
+    });
+    modal.querySelector('.modal-background').addEventListener('click', function() {
+        modal.classList.remove('is-active');
+    });
+
+
+// Modal for Zones Info
+const modalWhyZonesMatter = document.getElementById('modal-why-zones-matter');
+const btnOpenModalWhyZonesMatter = document.getElementById('open-modal-why-zones-matter');
+
+btnOpenModalWhyZonesMatter.addEventListener('click', function() {
+	modalWhyZonesMatter.classList.add('is-active');
+});
+
+modalWhyZonesMatter.querySelector('.modal-close').addEventListener('click', function() {
+	modalWhyZonesMatter.classList.remove('is-active');
+});
+});
+	

@@ -9,37 +9,128 @@
 	padding: 0;
 	margin: 0;
 }
+
+/*Navbar Styling*/
 .navbar{
 	background-color:var(--dark);
 	height: 100px;
 }
-
+.navbar-brand .title{
+	color:tan;
+	margin-top: 4vh;
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-size: 50px;
+	margin-left: 10px;
+}
 .navbar-item, .navbar-link{
 	color: var(--light);
 	font-weight: 600;
 	font-size: 20px;
 }
-
 .navbar-link{
-	padding-right: 50px;
+	padding-right: 60px;
 }
-
 .navbar-dropdown .navbar-item{
 	color: var(--dark);
 }
 
-/*Need to modify for top space*/
-
+/*Garden Image*/
 .notification2 {
   background-color: #064f19;
-	background-image: url(../images/woman-gardening.jpg);
-  color: #fff;
+	background-image: url(../Images/Gardener2.jpg);
+	color: #fff;
 	background-position: center;
 	background-size: cover;
 	height: 600px;
 	font-size: 100px;
 }
 
+/*Enter Location Container*/
+.notification.is-primary{
+	background-color: var(--dark);
+    color: #fff;
+	font-weight: 600;
+	align-content: center;
+    box-sizing: border-box;
+    border-radius: 4px;
+	text-align: center;
+    position: relative;
+	align-content: center;
+	font-size: 1em;
+    line-height: 1.5;
+    padding: 1.25rem 2.5rem 1.25rem 1.5rem;
+	font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+/*Header in Enter Location*/
+.notification.is-primary .h2{
+	font-size: 40px;
+	color:tan
+}
+/*paragraph styling for words in Enter Location Box*/
+.notification.is-primary .p{
+	font-size: 20px;
+	margin-right: 100px;
+	margin-left:100px;
+}
+
+/*zip code box*/
+.is-info.input{
+box-shadow: inset 0 0.0625em 0.125em rgba(10,10,10,.05);
+    max-width: 100%;
+    width: 25%;
+	border-color: olive;
+	border-radius: 4px;
+    color: #363636;
+	border-radius: 4px;
+    color: #363636;
+	background-color: #fff;
+}
+.input{
+	display: inline-flex;
+    font-size: 1rem;
+    height: 2.5em;
+    justify-content: flex-start;
+    line-height: 1.5;
+    padding-bottom: calc(0.5em - 1px);
+    padding-left: calc(0.75em - 1px);
+    padding-right: calc(0.75em - 1px);
+    padding-top: calc(0.5em - 1px);
+    position: relative;
+    vertical-align: top;
+	border-radius: 4px;
+    color: #35d393;
+}
+/*Get Plants Button Styling*/
+.notification.is-primary .button.is-success{
+	margin-bottom: 0.5rem;
+	margin-top: .5rem;
+    border-color: tan;
+	font-weight: 700;
+	box-shadow: #064f19;
+    color: var(--dark);
+	align-self: center;
+	background-color: bisque;
+	cursor: pointer;
+    padding-bottom: calc(0.5em - 1px);
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: calc(0.5em - 1px);
+    text-align: center;
+	border-width: 1px;
+    white-space: nowrap;
+	font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+/*more button styling*//
+.centered-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+
+ 
+
+
+/*ATTN Ed - not sure if we still need this*/
 .card{
 	background-color: antiquewhite;
 	border-radius: 2%;
