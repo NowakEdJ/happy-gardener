@@ -31,11 +31,25 @@
 /*Need to modify for top space*/
 
 .notification2 {
-  background-color: #178776;
+  background-color: #064f19;
 	background-image: url(../images/woman-gardening.jpg);
   color: #fff;
 	background-position: center;
 	background-size: cover;
 	height: 600px;
 	font-size: 100px;
+}
+
+.card{
+	background-color: antiquewhite;
+	border-radius: 2%;
+	font-weight: 500;
+}
+
+.card .plant-image{
+	border:#178776;
+	padding: 2px
+}
+.card .plantScientificName{
+	font-style: italic;
 }
