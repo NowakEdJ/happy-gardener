@@ -1,12 +1,10 @@
 const zipCodeEl = document.getElementById('zip-code');
 const zoneIdEl = document.getElementById('zone-id');
 const cardsContainerEl = document.querySelector('#cardsSection .columns');
-const searchButton=document.querySelector("#zipCodeBtn")
+const searchButton = document.querySelector("#zipCodeBtn");
 var zipCode;
 var zoneId;
 var bypassAPIMode = true; //Bypasses Hardiness Zone API call
-
-searchButton.addEventListener("click",getPlants)
 
 // *****Bulma*****
 //Modal for Zone Map in Navbar
@@ -26,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			modal.classList.remove('is-active');
 	});
 
-
 // Modal for Zones Info
 const modalWhyZonesMatter = document.getElementById('modal-why-zones-matter');
 const btnOpenModalWhyZonesMatter = document.getElementById('open-modal-why-zones-matter');
@@ -43,25 +40,17 @@ modalWhyZonesMatter.classList.remove('is-active');
 
 function initializePage() {
 	getLocalStorageLocation();
-	setPageLocation();
 };
 
-// TODO: This was used for prototyping.  Delete once Aloys wires-up new button!
-function oldButton() {
-	zipCode = prompt('Enter Zip Code', 80525);
-	getPlants();
-};
+searchButton.addEventListener("click",getPlants);
 
 function getPlants() {
 	
 	zipCode=zipCodeEl.value 
-	console.log(zipCode)
-	console.log(zipCodeEl.value)
 	if (!zipCode) return;
 	if (bypassAPIMode) {
 			zoneId = '5';
 			setLocalStorageLocation();
-			setPageLocation();
 			console.log("Calling Plant API");
 			apiGetPlants();
 	} else {
@@ -87,7 +76,6 @@ async function apiGetZoneId() {
 	.then(function (data) {
 		zoneId = data.hardiness_zone;
 		setLocalStorageLocation();
-		setPageLocation();
 		apiGetPlants();
 	})
 	.catch(function (error) {
@@ -97,7 +85,7 @@ async function apiGetZoneId() {
 }
 
 function apiGetPlants() {
-	fetch('https://perenual.com/api/species-list?key=sk-y2Fm655d69f4a17f03068&edible=1&edible=1&hardiness=' + zoneId)
+	fetch('https://perenual.com/api/species-list?key=sk-2rfU6564bcc049f6a3151&edible=1&edible=1&hardiness=' + zoneId)
 	.then(function (response) {
 		if (!response.ok) {
 			throw new Error(response.statusText);
@@ -184,7 +172,6 @@ function apiGetPlants() {
 	.catch(function (error) {
 		console.error('Plant API request error:', error);
 		alert('An unexpected error was encountered trying to process your plant listing.  Please try again.');
-		return 0;
 	});
 }
 
@@ -193,11 +180,6 @@ function getLocalStorageLocation() {
 	if (!zipCode) {zipCode = 0}
 	zoneId = localStorage.getItem("zoneId");
 	if (!zoneId) {zoneId = 0}
-}
-
-function setPageLocation() {
-	zipCodeEl.textContent = zipCode;
-	zoneIdEl.textContent = zoneId;
 }
 
 function setLocalStorageLocation() {
