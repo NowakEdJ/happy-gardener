@@ -1,10 +1,12 @@
 const zipCodeEl = document.getElementById('zip-code');
 const zoneIdEl = document.getElementById('zone-id');
 const cardsContainerEl = document.querySelector('#cardsSection .columns');
-
+const searchButton=document.querySelector("#zipCodeBtn")
 var zipCode;
 var zoneId;
 var bypassAPIMode = true; //Bypasses Hardiness Zone API call
+
+searchButton.addEventListener("click",getPlants)
 
 // *****Bulma*****
 //Modal for Zone Map in Navbar
@@ -51,6 +53,10 @@ function oldButton() {
 };
 
 function getPlants() {
+	
+	zipCode=zipCodeEl.value 
+	console.log(zipCode)
+	console.log(zipCodeEl.value)
 	if (!zipCode) return;
 	if (bypassAPIMode) {
 			zoneId = '5';
@@ -91,7 +97,7 @@ async function apiGetZoneId() {
 }
 
 function apiGetPlants() {
-	fetch('https://perenual.com/api/species-list?key=sk-2rfU6564bcc049f6a3151&edible=1&edible=1&hardiness=' + zoneId)
+	fetch('https://perenual.com/api/species-list?key=sk-y2Fm655d69f4a17f03068&edible=1&edible=1&hardiness=' + zoneId)
 	.then(function (response) {
 		if (!response.ok) {
 			throw new Error(response.statusText);
