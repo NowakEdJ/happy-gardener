@@ -1,10 +1,9 @@
-const zipCodeEl = document.getElementById('zip-code');
-const zoneIdEl = document.getElementById('zone-id');
 const cardsContainerEl = document.querySelector('#cardsSection .columns');
 const searchButton = document.querySelector("#zipCodeBtn");
+const zipCodeInput = document.getElementById('zip-code');
 var zipCode;
 var zoneId;
-var bypassAPIMode = true; //Bypasses Hardiness Zone API call
+var bypassAPIMode = false; //Bypasses Hardiness Zone API call
 
 // *****Bulma*****
 //Modal for Zone Map in Navbar
@@ -40,21 +39,23 @@ modalWhyZonesMatter.classList.remove('is-active');
 
 function initializePage() {
 	getLocalStorageLocation();
+	if (!zipCode) {
+	} else {
+		zipCodeInput.value = zipCode;
+	};
 };
 
 searchButton.addEventListener("click",getPlants);
 
 function getPlants() {
-	
-	zipCode=zipCodeEl.value 
+	zipCode = zipCodeInput.value;
 	if (!zipCode) return;
 	if (bypassAPIMode) {
 			zoneId = '5';
 			setLocalStorageLocation();
-			console.log("Calling Plant API");
 			apiGetPlants();
 	} else {
-			console.log("Calling Hardiness Zone API");
+			setLocalStorageLocation();
 			apiGetZoneId();
 	}
 };
