@@ -22,7 +22,7 @@ On the homepage, the user is prompted with a text box where they can put their z
 
 Once they enter a zip code, they will get a list of plants based on their region, along with a bit of information about each plant including the sun needs, watering needs, and scientific name of the plant.
 
-![Screenshot of the plant lists a user would get after entering their zip code](./assets/Images/Plant-List-Screnshot.png)
+![Screenshot of the plant lists a user would get after entering their zip code](./assets/Images/List-Screenshot.png)
 
 ## Technical Application Information 
 
