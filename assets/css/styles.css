@@ -1,8 +1,11 @@
 :root {
-    --dark: rgb(53, 134, 62);
+    --dark: rgba(122,132,65,255);
     --light: white;
+	--orange: rgba(228,142,30,255);
+	--teal: rgba(158,209,205,255);
     --border-radius: .3rem;
   }
+@import url(https://fonts.googleapis.com/css?family=Chewy:regular);
 
 * {
 	box-sizing: border-box;
@@ -16,10 +19,10 @@
 	height: 100px;
 }
 .navbar-brand .title{
-	color:tan;
+	color:white;
 	margin-top: 4vh;
-	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	font-size: 50px;
+	font-family:'chewy';
+	font-size: 45px;
 	margin-left: 10px;
 }
 .navbar-item, .navbar-link{
@@ -38,7 +41,7 @@
 .notification2 {
   background-color: #064f19;
 	background-image: url(../Images/Gardener2.jpg);
-	color: #fff;
+	color: var(--orange);
 	background-position: center;
 	background-size: cover;
 	height: 600px;
@@ -48,7 +51,7 @@
 /*Enter Location Container*/
 .notification.is-primary{
 	background-color: var(--dark);
-    color: #fff;
+    color: var(--teal);
 	font-weight: 600;
 	align-content: center;
     box-sizing: border-box;
@@ -64,7 +67,8 @@
 /*Header in Enter Location*/
 .notification.is-primary .h2{
 	font-size: 40px;
-	color:tan
+	font-family: 'chewy';
+	color: white;
 }
 /*paragraph styling for words in Enter Location Box*/
 .notification.is-primary .p{
@@ -107,9 +111,9 @@ box-shadow: inset 0 0.0625em 0.125em rgba(10,10,10,.05);
     border-color: tan;
 	font-weight: 700;
 	box-shadow: #064f19;
-    color: var(--dark);
+    color: white;
 	align-self: center;
-	background-color: bisque;
+	background-color: var(--orange);
 	cursor: pointer;
     padding-bottom: calc(0.5em - 1px);
     padding-left: 1em;
